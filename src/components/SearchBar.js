@@ -133,10 +133,12 @@ export default class SearchBar extends Component {
   };
 
   render() {
-    const { classes, pokemonData } = this.props;
+    const { classes } = this.props;
     const { inputValue, selectedItem } = this.state;
 
-    console.log(this.state.suggestions, "log");
+    console.log(selectedItem, "<====selected");
+
+    this.props.getChildData(selectedItem);
 
     return (
       <Downshift

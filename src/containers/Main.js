@@ -6,7 +6,8 @@ export default class Main extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      pokemonData: {}
+      pokemonData: {},
+      searchTerm: ""
     };
   }
 
@@ -16,12 +17,16 @@ export default class Main extends PureComponent {
       .then(res => this.setState({ pokemonData: res }))
       .catch(err => console.log(err, "<===err"));
   };
+
+  getChildData = data => {
+    this.setState({ searchTerm: data.join() });
+  };
   render() {
-    const { pokemonData } = this.state;
+    const { pokemonData, searchTerm } = this.state;
     return (
       <div>
-        <SearchBar pokemonData={pokemonData} />
-        <PokeList pokemonData={pokemonData} />
+        <SearchBar pokemonData={pokemonData} getChildData={this.getChildData} />
+        <PokeList pokemonData={pokemonData} searchTerm={searchTerm} />
       </div>
     );
   }
