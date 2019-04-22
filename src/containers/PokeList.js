@@ -30,7 +30,6 @@ export default class Pokelist extends PureComponent {
     };
     let fuse = new Fuse(e, opts);
     let res = fuse.search(searchTerm);
-    console.log(res);
 
     return res;
   };

@@ -16,6 +16,8 @@ export default class Main extends PureComponent {
       .get("https://pokeapi.co/api/v2/pokemon?limit=900")
       .then(res => this.setState({ pokemonData: res }))
       .catch(err => console.log(err, "<===err"));
+
+    console.log("%c I dont care bitch ", "background: green; color: white");
   };
 
   getChildData = data => {

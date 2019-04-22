@@ -133,12 +133,9 @@ export default class SearchBar extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, getChildData } = this.props;
     const { inputValue, selectedItem } = this.state;
-
-    console.log(selectedItem, "<====selected");
-
-    this.props.getChildData(selectedItem);
+    getChildData(selectedItem);
 
     return (
       <Downshift
