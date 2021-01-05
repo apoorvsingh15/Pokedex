@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "downshift": "^3.2.7",
     "fuse.js": "^3.4.4",
     "prop-types": "^15.7.2",
